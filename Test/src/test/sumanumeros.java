@@ -43,9 +43,9 @@ public class sumanumeros {
             
         } while(i<=20);
         
-        if(num>0){}
-        else{
-        }
+        //if(num>0){}
+        //else{
+        //}
     }
     
 }
