@@ -6,6 +6,8 @@
 package ejercicio1colec;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -24,7 +26,7 @@ public class Ejercicio1Colec {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner ing = new Scanner(System.in);
+        Scanner ing = new Scanner(System.in).useDelimiter("\n");
         ArrayList<String> razaPerro = new ArrayList();
         char rpta;
         do {
@@ -45,8 +47,37 @@ un perro y se recorrerá la lista con un Iterator, se buscará el perro en la li
 está en la lista, se eliminará el perro que ingresó el usuario y se mostrará la lista
 ordenada. Si el perro no se encuentra en la lista, se le informará al usuario y se mostrará
 la lista ordenada. */
+        System.out.println("Ingrese una raza de perro a eliminar: ");
+        String r = ing.next();
+        // con iterator le pasamos todos los elementos de la lista razaPerro al iterator it
+        Iterator<String> it = razaPerro.iterator();
+        // iterator se conecta de alguna manera con el arraylist de razaPerro
+        int tamanio = razaPerro.size();
+        // con el hasnext nos permite tomar el elemento
+        while (it.hasNext()) {
+            // cada elemento va a ser guardado en la variable auxiliar
+            String aux = it.next();
+            if (aux.equals(r)) {
+                // en automatico toma el elemento y lo elimina, sin necesidad de colocar la posicion
+                it.remove();
+                //System.out.println("Se ha eliminado la raza ingresada.");
+
+            } //else {
+                //System.out.println("La raza de perro ingresada no esta en la lista.");
+            //}
+        }
+
+        if (tamanio > razaPerro.size()) {
+            System.out.println("Se ha eliminado la raza ingresada.");
+        }else{
+        System.out.println("La raza de perro ingresada no esta en la lista.");
+        }
         
-        
+        //System.out.println(razaPerro.size());
+        // sort es para ordenar una lista en forma ascendente
+        Collections.sort(razaPerro);
+        razaPerro.forEach((raza) -> System.out.println(raza));
+
     }
 
 }
