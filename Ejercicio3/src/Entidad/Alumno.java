@@ -15,23 +15,16 @@ import java.util.List;
 public class Alumno {
 
     private String nombreA;
-    //private List<Integer> notas;
+    private ArrayList <Integer> notas;
 
     public Alumno() {
         //this.notas = new ArrayList();
     }
 
-    public Alumno(String nombreA) {
+    public Alumno(String nombreA, ArrayList<Integer> notas) {
         this.nombreA = nombreA;
         //this.notas = new ArrayList();
-    }
-
-    @Override
-    /*public String toString() {
-        return "Alumno{" + "nombreA=" + nombreA + "}'";
-    }*/
-      public String toString() {
-        return "Alumno{" + "nombreA=" + nombreA + "}'";
+        this.notas = notas;
     }
 
     public String getNombreA() {
@@ -42,12 +35,17 @@ public class Alumno {
         this.nombreA = nombreA;
     }
 
-    //public List<Integer> getNotas() {
-        //return notas;
-    //}
+    public ArrayList<Integer> getNotas() {
+        return notas;
+    }
 
-    //public void setNotas(List<Integer> notas) {
-        //this.notas = notas;
-    //}
+    public void setNotas(ArrayList<Integer> notas) {
+        this.notas = notas;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "nombreA=" + nombreA + ", notas=" + notas + '}';
+    }
 
 }

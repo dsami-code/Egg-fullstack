@@ -5,6 +5,7 @@
  */
 package ejercicio3;
 
+import Entidad.Alumno;
 import Servicio.AlumnoService;
 
 /**
@@ -20,8 +21,10 @@ public class Ejercicio3 {
         // TODO code application logic here
         
         AlumnoService cn = new AlumnoService();
-        cn.crearAlumno();
-        cn.mostrarAlumnos();
+        Alumno alu = cn.crearAlumno();
+        cn.mostrarAlumnos(alu);
+        //System.out.println(cn.notaFinal(alu));
+        cn.notaFinal(alu);
     }
     
 }

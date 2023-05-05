@@ -8,6 +8,8 @@ package Servicio;
 import Entidad.Alumno;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+
 import java.util.Scanner;
 
 /**
@@ -32,18 +34,25 @@ public class AlumnoService {
     ArrayList<Alumno> alumnos = new ArrayList();
 
     public Alumno crearAlumno() {
-        Alumno alum;
+        Alumno alum = new Alumno();
         char rpta;
+        Integer[] not = new Integer[3];
         do {
             System.out.println("Ingrese el nombre del alumno: ");
+            alum.setNombreA(ing.next());
+            System.out.println("Ingrese tres notas.");
 
-            String a = ing.next();
-            //alumnos.add(new Alumno(alum.setNombreA(ing.next())));
-            alum = new Alumno(a);
-          
-            alumnos.add(alum);
-            //System.out.println("Ingrese la raza del perro: ");
-            //razaPerro.add(ing.next());
+            for (int i = 0; i < not.length; i++) {
+                System.out.println("Ingrese nota " + i + ":");
+                not[i] = ing.nextInt();
+                //alumnos.add(i, Arrays.asList(not));
+
+            }
+            ArrayList<Integer> nt = new ArrayList(Arrays.asList(not));
+
+            alum.setNotas(nt);
+            alumnos.add(new Alumno(alum.getNombreA(), alum.getNotas()));
+
             System.out.println("¿Desea guardar otro alumno?.");
             System.out.println("Escriba S(si) o N(no)");
             rpta = ing.next().charAt(0);
@@ -55,9 +64,60 @@ public class AlumnoService {
 
     }
 
-    public void mostrarAlumnos() {
+    public void mostrarAlumnos(Alumno alum) {
 
         System.out.println(alumnos);
     }
 
+    public void notaFinal(Alumno alum) {
+        //double prom = 0;
+        System.out.println("Ingrese el nombre del alumno a buscar: ");
+
+        String r = ing.next();
+        //Iterator<Alumno> it = alumnos.iterator();
+        int posi = 0;
+        int p = 0;
+        
+        for (int i = 0; i < alumnos.size(); i++) {
+            if(alumnos.equals(r)){
+                System.out.println("alumno: " + alumnos.get(i));
+                    posi++;
+            }
+            
+        }
+        /*while (it.hasNext()) {
+            // cada elemento va a ser guardado en la variable auxiliar
+            //String aux = it.next();
+            if (it.next().getNombreA().equals(r)) {
+                //alumnos.indexOf(r);
+                //alum.getNotas().get(posi);
+                
+                System.out.println("nombre: " + alum.getNombreA());
+                System.out.println("notas: " + alum.getNotas());
+                posi++;
+
+                
+            } //else {
+            //System.out.println("La raza de perro ingresada no esta en la lista.");
+            //}
+            //break;
+        }*/
+        /*for (Alumno al : alumnos) {
+            if (al.equals(r)) {
+                System.out.println("nombre: " + alum.getNombreA());
+                System.out.println("notas: " + alum.getNotas());
+                posi++;
+            }
+        }*/
+
+        //System.out.println("notas: ");
+        //System.out.println(alum.getNotas().get(posi));
+        //return prom;
+        if (posi > 0) {
+            System.out.println("alumno encontrado");
+        } else {
+            System.out.println("alumno no encontrado");
+        }
+
+    }
 }
