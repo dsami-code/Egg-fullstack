@@ -77,14 +77,28 @@ public class AlumnoService {
         //Iterator<Alumno> it = alumnos.iterator();
         int posi = 0;
         int p = 0;
-        
+        int suma = 0;
+        double promedio = 0;
+        int d = 0;
+
         for (int i = 0; i < alumnos.size(); i++) {
-            if(alumnos.equals(r)){
+            Alumno a = alumnos.get(i);
+
+            if (a.getNombreA().equals(r)) {
                 System.out.println("alumno: " + alumnos.get(i));
-                    posi++;
+
+                System.out.println("notas:" + a.getNotas());
+                posi++;
+                for (int j = 0; j < a.getNotas().size(); j++) {
+                    //d = a.getNotas().size();
+                    suma = suma + a.getNotas().get(j);
+
+                }
+                System.out.println("suma: " + suma);
             }
-            
+
         }
+
         /*while (it.hasNext()) {
             // cada elemento va a ser guardado en la variable auxiliar
             //String aux = it.next();
@@ -102,19 +116,20 @@ public class AlumnoService {
             //}
             //break;
         }*/
-        /*for (Alumno al : alumnos) {
+ /*for (Alumno al : alumnos) {
             if (al.equals(r)) {
                 System.out.println("nombre: " + alum.getNombreA());
                 System.out.println("notas: " + alum.getNotas());
                 posi++;
             }
         }*/
-
         //System.out.println("notas: ");
         //System.out.println(alum.getNotas().get(posi));
         //return prom;
         if (posi > 0) {
             System.out.println("alumno encontrado");
+            promedio = suma / alum.getNotas().size();
+            System.out.println("el promedio final del alumno es: " + promedio);
         } else {
             System.out.println("alumno no encontrado");
         }
