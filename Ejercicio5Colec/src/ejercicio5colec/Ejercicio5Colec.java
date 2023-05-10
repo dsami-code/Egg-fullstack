@@ -3,28 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio4colec;
+package ejercicio5colec;
 
-import Entidad.Pelicula;
-import Servicio.PeliculaService;
+import Entidad.Paises;
+import Servicio.PaisServicio;
 
 /**
  *
  * @author Usuario
  */
-public class Ejercicio4Colec {
+public class Ejercicio5Colec {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        PeliculaService cn = new PeliculaService();
-        Pelicula peli = cn.crearPelicula();
-        cn.mostrarPelicula();
-        cn.peliculaMayor();
-        cn.ordenPeliculas();
-        cn.ordenPeliculaMenor();
+        PaisServicio cn = new PaisServicio();
+        Paises pS = cn.ingresarPaises();
+        cn.mostrarPaises(pS);
         
     }
     

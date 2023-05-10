@@ -17,12 +17,12 @@ Implemente las clases y métodos necesarios para esta situación, teniendo en cu
 public class Pelicula {
     private String titulo;
     private String director;
-    private int horas;
+    private Integer horas;
 
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, String director, int horas) {
+    public Pelicula(String titulo, String director, Integer horas) {
         this.titulo = titulo;
         this.director = director;
         this.horas = horas;
@@ -44,11 +44,11 @@ public class Pelicula {
         this.director = director;
     }
 
-    public int getHoras() {
+    public Integer getHoras() {
         return horas;
     }
 
-    public void setHoras(int horas) {
+    public void setHoras(Integer horas) {
         this.horas = horas;
     }
 

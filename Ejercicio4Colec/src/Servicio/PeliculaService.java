@@ -8,6 +8,7 @@ package Servicio;
 import Entidad.Pelicula;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 //import java.util.Comparator;
 import java.util.Scanner;
 
@@ -66,13 +67,30 @@ public class PeliculaService {
         }
 
     }
-
+ 
     public void ordenPeliculas() {
-        for (Pelicula pelicula : p) {
-            
-        }
+        //Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en
+        //pantalla.
+        System.out.println(" ");
+        System.out.println("+++++++++++++++++++");
+        Comparator<Pelicula> ordenMayorMenor = (Pelicula t, Pelicula t1) -> t1.getHoras().compareTo(t.getHoras());
+        Collections.sort(p,ordenMayorMenor);
+        p.forEach((item) -> {
+            System.out.println(item.getHoras()+ " / "+item.getTitulo() + " / " + item.getDirector());
+        });
      
 
+    }
+    
+    public void  ordenPeliculaMenor(){
+        System.out.println(" ");
+        System.out.println("+++++++++++++++++++");
+     Comparator<Pelicula> ordenMenorMayor = (Pelicula t, Pelicula t1) -> t.getHoras().compareTo(t1.getHoras());
+        Collections.sort(p,ordenMenorMayor);
+        p.forEach((item) -> {
+            System.out.println(item.getHoras()+ " / "+item.getTitulo() + " / " + item.getDirector());
+        });
+    
     }
 
 }
