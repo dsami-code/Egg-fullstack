@@ -22,6 +22,7 @@ public class ProductoService {
 
     public void menu() {
         int var = 0;
+       
         while (var != 5) {
             System.out.println("*******************");
             System.out.println("Menu Principal");
@@ -33,6 +34,7 @@ public class ProductoService {
             System.out.println(" ");
             System.out.println("Ingrese una opcion:");
             var = ing.nextInt();
+          
             switch (var) {
                 case 1:
                     ingresarProduc();
