@@ -38,7 +38,7 @@ public class RevolverAgua {
 
     @Override
     public String toString() {
-        return "ReolverAgua{" + "posicionAct=" + posicionAct + ", posicionAgu=" + posicionAgu + '}';
+        return "RevolverAgua{" + "posicionAct=" + posicionAct + ", posicionAgu=" + posicionAgu + '}';
     }
     
     

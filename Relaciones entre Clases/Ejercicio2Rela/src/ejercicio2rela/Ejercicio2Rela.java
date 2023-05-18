@@ -4,6 +4,9 @@
  */
 package ejercicio2rela;
 
+import Entidad.RevolverAgua;
+import Service.RuletaServicio;
+
 /**
  *
  * @author Usuario
@@ -15,6 +18,16 @@ public class Ejercicio2Rela {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        RuletaServicio cn = new RuletaServicio();
+        RevolverAgua rev = cn.llenarRevolver();
+        
+        cn.mojar(rev);
+        cn.siguienteChorro(rev);
+        cn.mostrar(rev);
+        //cn.llenarJuego(rev);
+        cn.mostrarJugador(cn.llenarJuego(rev));
+        cn.ronda(rev);
     }
     
 }
