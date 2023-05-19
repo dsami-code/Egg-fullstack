@@ -72,15 +72,15 @@ public class RuletaServicio {
 
         for (int i = 0; i < jugador.getCantidad(); i++) {
 
-            System.out.println("Ingrese el ID del jugador: ");
+            //System.out.println("Ingrese el ID del jugador: ");
             jugador.setiD(i + 1);
-            System.out.println("Ingrese el nombre del jugador: ");
-            jugador.setNombre(ing.next());
+            //System.out.println("Ingrese el nombre del jugador: ");
+            jugador.setNombre("Jugador " + jugador.getiD());
             //System.out.println("Indique si esta mojado o no: ");
             //Boolean m = mojar(rev);
             //disparo(rev);
             //jugador.setMojado(mojar(rev));
-
+            
             jugadores.add(new Jugador(jugador.getiD(), jugador.getCantidad(), jugador.getNombre(), false));
 
         }
@@ -105,9 +105,9 @@ public class RuletaServicio {
         do {
             for (Jugador object : j.getJugadores()) {
                 disparo(rev);
-                System.out.println("mojar:" + mojar(rev));
-                System.out.println("jugador" + object.getNombre());
-                System.out.println("revolver:" + rev);
+                System.out.println("mojar: " + mojar(rev));
+                System.out.println("jugador: " + object.getNombre());
+                System.out.println("revolver: " + rev);
                 if (mojar(rev)) {
                     object.setMojado(true);
                     System.out.println("El juego ha terminado");
