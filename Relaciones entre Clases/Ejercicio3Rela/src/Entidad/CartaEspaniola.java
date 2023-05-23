@@ -5,6 +5,8 @@
 package Entidad;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 /**
  *
@@ -17,6 +19,10 @@ public class CartaEspaniola {
     //private int[] arrayNu = new int[10];
     int[] arrayNum = new int[10];
     String[] arrayPalo = {"espadas", "bastos", "oros", "copas"};
+    ArrayList<CartaEspaniola> cartaM = new ArrayList();
+    ArrayList<CartaEspaniola> baraja = new ArrayList();
+
+    Scanner ing = new Scanner(System.in);
 
     public CartaEspaniola() {
 
@@ -96,19 +102,21 @@ public class CartaEspaniola {
     }*/
     }
 
-    public void barajar() {
-        ArrayList<CartaEspaniola> baraja = new ArrayList();
+    public ArrayList<CartaEspaniola> barajar() {
+
         CartaEspaniola m = new CartaEspaniola();
         for (int i = 0; i < 4; i++) {
 
             for (int j = 0; j < 10; j++) {
-                numC = arrayNum[j];
-                palo = arrayPalo[i];
-                baraja.add(new CartaEspaniola(numC, palo));
+                m.setNumC(arrayNum[j]);
+                m.setPalo(arrayPalo[i]);
+
+                baraja.add(new CartaEspaniola(m.getNumC(), m.getPalo()));
 
             }
         }
-
+        System.out.println("*******************");
+        System.out.println("cartas ordenadas");
         for (CartaEspaniola carta : baraja) {
             System.out.println(carta);
         }
@@ -126,18 +134,100 @@ public class CartaEspaniola {
                     numC = arrayNum[(int) (Math.random() * 10)];
                     palo = arrayPalo[(int) (Math.random() * 4)];
                     barajaC.add(new CartaEspaniola(numC, palo));
-                  
+
                 } while (barajaC.get(i).getNumC() != numC && !barajaC.get(i).getPalo().equals(palo));
 
             }
         }
-
         for (CartaEspaniola cartaC : barajaC) {
 
-            System.out.println(cartaC);
+            System.out.println(cartaC.toString());
         }
 
+        System.out.println("--------------------");
+        return baraja;
+        //System.out.println(barajaC.);
         //System.out.println(baraja.get((int)(Math.random()*baraja.size())));    
+    }
+
+    public ArrayList<CartaEspaniola> barajarC() {
+
+        System.out.println(" ");
+        System.out.println("++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("cartas cambiadas con metodo shuffle");
+
+        Collections.shuffle(baraja);
+        for (CartaEspaniola cartaCS : baraja) {
+            System.out.println("cartas cambiadas con shuffle: " + cartaCS.toString());
+
+        }
+        return baraja;
+    }
+
+    public CartaEspaniola siguienteCarta() {
+
+        if (baraja.isEmpty()) {
+            System.out.println("Ya no hay mas cartas.");
+            return null;
+        }
+        // para indicar que se ha brindado una carta, se tiene que eliminar
+        // y es pasado a la lista del monton "cartaM"
+        CartaEspaniola c = baraja.remove(0);
+        cartaM.add(c);
+
+        return c;
+
+    }
+
+    public void cartaDisponible() {
+        System.out.println("Cartas disponibles son: " + baraja.size());
+
+    }
+
+    //darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de 
+//cartas. En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero
+//debemos indicárselo al usuario. 
+    public void darCartas() {
+        System.out.println("Cuántas cartas desea: ");
+        int cT = ing.nextInt();
+        if (cT <= baraja.size()) {
+            for (int i = 0; i < cT; i++) {
+                CartaEspaniola c = baraja.remove(0);
+                cartaM.add(c);
+            }
+        } else {
+            System.out.println("No tenemos la cantidad de cartas solicitadas.");
+        }
+
+    }
+
+    //cartasMonton(): mostramos aquellas cartas que ya han salido, si no ha salido ninguna
+//indicárselo al usuario 
+    public void cartaMonton() {
+        System.out.println("Cartas del monton: " + cartaM.size());
+        if (cartaM.isEmpty()) {
+            System.out.println("No ha salido ninguna carta.");
+
+        } else {
+            System.out.println("carta del monton.");
+            for (CartaEspaniola cM : cartaM) {
+
+                System.out.println(cM.toString());
+            }
+
+        }
+
+    }
+
+    //mostrarBaraja(): muestra todas las cartas hasta el final. Es decir, si se saca una carta y
+//luego se llama al método, este no mostrara esa primera carta.
+    public void mostraBarajaFin() {
+        System.out.println("*************************");
+        System.out.println("BARAJA");
+        for (CartaEspaniola cartas : baraja) {
+            System.out.println(cartas.toString());
+        }
+
     }
 
 }
