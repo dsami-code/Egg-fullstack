@@ -4,11 +4,14 @@
  */
 package ejerciciox2her;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Usuario
  */
-public class EdificioOficina  extends Edificio{
+public class EdificioOficina extends Edificio {
+
     protected int numOfi;
     protected int cantPerxOfi;
     protected int numPisos;
@@ -72,41 +75,40 @@ public class EdificioOficina  extends Edificio{
 
     @Override
     public String toString() {
-        return "EdificioOficina{" + "numOfi=" + numOfi + ", cantPerxOfi=" + cantPerxOfi + ", numPisos=" + numPisos + '}';
+        return "EdificioOficina"  + "\n" +"numOfi     : " + numOfi + "\n" + "cantPerxOfi :" + cantPerxOfi +  "\n" + "numPisos   :" + numPisos ;
     }
-    
-    
-    
-    
-     @Override
+
+    @Override
     public double calcularSuperficie() {
-        System.out.println("Ingrese el largo del Edificio de Oficinas: ");
+        System.out.println("CALCULO DE SUPERFICIE");
+        System.out.print("Ingrese el largo del Edificio de Oficinas: ");
         this.largo = ing.nextDouble();
-        System.out.println("Ingrese el ancho del Edificio de Oficinas: ");
+        System.out.print("Ingrese el ancho del Edificio de Oficinas: ");
         this.ancho = ing.nextDouble();
-        double superficie = (this.largo*this.ancho)*this.numOfi;
+        double superficie = (this.largo * this.ancho) * this.numOfi;
         //System.out.println("La superficie del Edificio de Oficinas es: " + superficie);
         return superficie;
     }
 
     @Override
     public void calcularVolumen() {
-        System.out.println("Ingrese el largo del Edificio de Oficinas: ");
-        this.largo = ing.nextDouble();
-        System.out.println("Ingrese el ancho del Edificio de Oficinas: ");
-        this.ancho = ing.nextDouble();
-        double superficie = this.largo*this.ancho;
-        System.out.println("La superficie del Edificio de Oficinas es: " + superficie);
+        System.out.println("CALCULO DE VOLUMEN");
+        System.out.print("Ingrese la altura del Edificio de Oficinas: ");
+        this.alto = ing.nextDouble();
+        double volumen = this.largo * this.ancho * this.alto;
+        DecimalFormat df = new DecimalFormat("###.##");
+        System.out.println("La superficie del Edificio de Oficinas es: " + df.format(volumen));
     }
-    
-    public void cantPersonas(){
-        System.out.println("Ingrese la cantidad de oficinas: ");
+
+    public void cantPersonas() {
+        System.out.println("INGRESO DE DATOS DEL EDIFICIO DE OFICINAS");
+        System.out.print("Ingrese la cantidad de oficinas: ");
         this.numOfi = ing.nextInt();
-        System.out.println("Ingrese la cantidad de personas por oficina: ");
+        System.out.print("Ingrese la cantidad de personas por oficina: ");
         this.cantPerxOfi = ing.nextInt();
         this.numPisos = this.numOfi;
         System.out.println("Cantidad de personas que ingresan en un piso: " + this.cantPerxOfi);
-        System.out.println("Cantidad de personas permitidas en todo el edificio es: " + (this.cantPerxOfi*this.numPisos));
-    
+        System.out.println("Cantidad total de personas que pueden trabajar en el edificio es: " + (this.cantPerxOfi * this.numPisos));
+
     }
 }

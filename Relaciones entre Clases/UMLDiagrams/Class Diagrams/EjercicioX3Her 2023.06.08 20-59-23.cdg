@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioX3Her">
+  <ClassDiagramComponents>
+    <Class name="Alojamientos" package="ejerciciox3her" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="direccion" type="String" visibility="protected"/>
+        <Field name="localidad" type="String" visibility="protected"/>
+        <Field name="gerente" type="String" visibility="protected"/>
+        <Field name="ing" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="gerente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getLocalidad" returnType="String" visibility="public"/>
+        <Method name="setLocalidad" returnType="void" visibility="public">
+          <Argument type="String" name="localidad"/>
+        </Method>
+        <Method name="getGerente" returnType="String" visibility="public"/>
+        <Method name="setGerente" returnType="void" visibility="public">
+          <Argument type="String" name="gerente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="cargarDatos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EjercicioX3Her" package="ejerciciox3her" visibility="public" xPosition="85.0" yPosition="571.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hotel4" package="ejerciciox3her" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="gimnasio" type="char" visibility="protected"/>
+        <Field name="nombreRest" type="String" visibility="protected"/>
+        <Field name="capRest" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="char" name="gimnasio"/>
+          <Argument type="String" name="nombreRest"/>
+          <Argument type="int" name="capRest"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="char" name="gimnasio"/>
+          <Argument type="String" name="nombreRest"/>
+          <Argument type="int" name="capRest"/>
+          <Argument type="int" name="cHabita"/>
+          <Argument type="int" name="numCamas"/>
+          <Argument type="int" name="pisos"/>
+          <Argument type="double" name="precioHabita"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="gerente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getGimnasio" returnType="char" visibility="public"/>
+        <Method name="setGimnasio" returnType="void" visibility="public">
+          <Argument type="char" name="gimnasio"/>
+        </Method>
+        <Method name="getNombreRest" returnType="String" visibility="public"/>
+        <Method name="setNombreRest" returnType="void" visibility="public">
+          <Argument type="String" name="nombreRest"/>
+        </Method>
+        <Method name="getCapRest" returnType="int" visibility="public"/>
+        <Method name="setCapRest" returnType="void" visibility="public">
+          <Argument type="int" name="capRest"/>
+        </Method>
+        <Method name="getcHabita" returnType="int" visibility="public"/>
+        <Method name="setcHabita" returnType="void" visibility="public">
+          <Argument type="int" name="cHabita"/>
+        </Method>
+        <Method name="getNumCamas" returnType="int" visibility="public"/>
+        <Method name="setNumCamas" returnType="void" visibility="public">
+          <Argument type="int" name="numCamas"/>
+        </Method>
+        <Method name="getPisos" returnType="int" visibility="public"/>
+        <Method name="setPisos" returnType="void" visibility="public">
+          <Argument type="int" name="pisos"/>
+        </Method>
+        <Method name="getPrecioHabita" returnType="double" visibility="public"/>
+        <Method name="setPrecioHabita" returnType="void" visibility="public">
+          <Argument type="double" name="precioHabita"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getLocalidad" returnType="String" visibility="public"/>
+        <Method name="setLocalidad" returnType="void" visibility="public">
+          <Argument type="String" name="localidad"/>
+        </Method>
+        <Method name="getGerente" returnType="String" visibility="public"/>
+        <Method name="setGerente" returnType="void" visibility="public">
+          <Argument type="String" name="gerente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="precioHabitacion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hotel5" package="ejerciciox3her" visibility="public" xPosition="1809.0" yPosition="107.0">
+      <Fields>
+        <Field name="cantSalones" type="int" visibility="protected"/>
+        <Field name="cantSuites" type="int" visibility="protected"/>
+        <Field name="cantLimosinas" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cantSalones"/>
+          <Argument type="int" name="cantSuites"/>
+          <Argument type="int" name="cantLimosinas"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="cantSalones"/>
+          <Argument type="int" name="cantSuites"/>
+          <Argument type="int" name="cantLimosinas"/>
+          <Argument type="char" name="gimnasio"/>
+          <Argument type="String" name="nombreRest"/>
+          <Argument type="int" name="capRest"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="cantSalones"/>
+          <Argument type="int" name="cantSuites"/>
+          <Argument type="int" name="cantLimosinas"/>
+          <Argument type="char" name="gimnasio"/>
+          <Argument type="String" name="nombreRest"/>
+          <Argument type="int" name="capRest"/>
+          <Argument type="int" name="cHabita"/>
+          <Argument type="int" name="numCamas"/>
+          <Argument type="int" name="pisos"/>
+          <Argument type="double" name="precioHabita"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="gerente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCantSalones" returnType="int" visibility="public"/>
+        <Method name="setCantSalones" returnType="void" visibility="public">
+          <Argument type="int" name="cantSalones"/>
+        </Method>
+        <Method name="getCantSuites" returnType="int" visibility="public"/>
+        <Method name="setCantSuites" returnType="void" visibility="public">
+          <Argument type="int" name="cantSuites"/>
+        </Method>
+        <Method name="getCantLimosinas" returnType="int" visibility="public"/>
+        <Method name="setCantLimosinas" returnType="void" visibility="public">
+          <Argument type="int" name="cantLimosinas"/>
+        </Method>
+        <Method name="getGimnasio" returnType="char" visibility="public"/>
+        <Method name="setGimnasio" returnType="void" visibility="public">
+          <Argument type="char" name="gimnasio"/>
+        </Method>
+        <Method name="getNombreRest" returnType="String" visibility="public"/>
+        <Method name="setNombreRest" returnType="void" visibility="public">
+          <Argument type="String" name="nombreRest"/>
+        </Method>
+        <Method name="getCapRest" returnType="int" visibility="public"/>
+        <Method name="setCapRest" returnType="void" visibility="public">
+          <Argument type="int" name="capRest"/>
+        </Method>
+        <Method name="getcHabita" returnType="int" visibility="public"/>
+        <Method name="setcHabita" returnType="void" visibility="public">
+          <Argument type="int" name="cHabita"/>
+        </Method>
+        <Method name="getNumCamas" returnType="int" visibility="public"/>
+        <Method name="setNumCamas" returnType="void" visibility="public">
+          <Argument type="int" name="numCamas"/>
+        </Method>
+        <Method name="getPisos" returnType="int" visibility="public"/>
+        <Method name="setPisos" returnType="void" visibility="public">
+          <Argument type="int" name="pisos"/>
+        </Method>
+        <Method name="getPrecioHabita" returnType="double" visibility="public"/>
+        <Method name="setPrecioHabita" returnType="void" visibility="public">
+          <Argument type="double" name="precioHabita"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getLocalidad" returnType="String" visibility="public"/>
+        <Method name="setLocalidad" returnType="void" visibility="public">
+          <Argument type="String" name="localidad"/>
+        </Method>
+        <Method name="getGerente" returnType="String" visibility="public"/>
+        <Method name="setGerente" returnType="void" visibility="public">
+          <Argument type="String" name="gerente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="precioHabitacion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hoteles" package="ejerciciox3her" visibility="public" xPosition="183.0" yPosition="893.0">
+      <Fields>
+        <Field name="cHabita" type="int" visibility="protected"/>
+        <Field name="numCamas" type="int" visibility="protected"/>
+        <Field name="pisos" type="int" visibility="protected"/>
+        <Field name="precioHabita" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cHabita"/>
+          <Argument type="int" name="numCamas"/>
+          <Argument type="int" name="pisos"/>
+          <Argument type="double" name="precioHabita"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="direccion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="gerente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getcHabita" returnType="int" visibility="public"/>
+        <Method name="setcHabita" returnType="void" visibility="public">
+          <Argument type="int" name="cHabita"/>
+        </Method>
+        <Method name="getNumCamas" returnType="int" visibility="public"/>
+        <Method name="setNumCamas" returnType="void" visibility="public">
+          <Argument type="int" name="numCamas"/>
+        </Method>
+        <Method name="getPisos" returnType="int" visibility="public"/>
+        <Method name="setPisos" returnType="void" visibility="public">
+          <Argument type="int" name="pisos"/>
+        </Method>
+        <Method name="getPrecioHabita" returnType="double" visibility="public"/>
+        <Method name="setPrecioHabita" returnType="void" visibility="public">
+          <Argument type="double" name="precioHabita"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getLocalidad" returnType="String" visibility="public"/>
+        <Method name="setLocalidad" returnType="void" visibility="public">
+          <Argument type="String" name="localidad"/>
+        </Method>
+        <Method name="getGerente" returnType="String" visibility="public"/>
+        <Method name="setGerente" returnType="void" visibility="public">
+          <Argument type="String" name="gerente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="precioHabitacion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ejerciciox3her.Hoteles" target="ejerciciox3her.Alojamientos"/>
+    <IsRelation name="is" source="ejerciciox3her.Hotel4" target="ejerciciox3her.Hoteles"/>
+    <IsRelation name="is" source="ejerciciox3her.Hotel5" target="ejerciciox3her.Hotel4"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -4,6 +4,8 @@
  */
 package ejerciciox2her;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Usuario
@@ -63,7 +65,7 @@ public class Polideportivo extends Edificio {
 
     @Override
     public String toString() {
-        return "Polideportivo{" + "nombre=" + nombre + "\n" +", tipoInst=" + tipoInst + '}';
+        return "Polideportivo: " +"\n"+ "nombre: " + nombre + "\n" +"tipoInst: " + tipoInst;
     }
 
     @Override
@@ -80,14 +82,17 @@ public class Polideportivo extends Edificio {
 
     @Override
     public void calcularVolumen() {
-        System.out.print("Ingre la altura del polideportivo: ");
+        System.out.println("CALCULO DE VOLUMEN");
+        System.out.print("Ingrese la altura del polideportivo: ");
         this.alto = ing.nextDouble();
         double volumen = this.largo * this.ancho * this.alto;
-        System.out.println("El volumen del polideportivo es: " + volumen);
+         DecimalFormat df = new DecimalFormat("###.##");
+        System.out.println("El volumen del polideportivo es: " + df.format(volumen));
 
     }
 
     public void calcularPolideportivo() {
+        System.out.println("INGRESO DE DATOS DEL POLIDEPORTIVO");
         System.out.println("Ingrese el nombre del polideportivo: ");
         this.nombre = ing.next();
         System.out.println("TIPO DE INSTALACION");
