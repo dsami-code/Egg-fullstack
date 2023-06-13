@@ -89,7 +89,7 @@ public class AlojamientoExtras extends Alojamientos{
     int op;
         System.out.println("TIPO DE ALOJAMIENTO");
         System.out.println("1 - ALOJAMIENTO PRIVADO");
-        System.out.println("ALOJAMIENTO AL AIRE LIBRE");
+        System.out.println("2 - ALOJAMIENTO AL AIRE LIBRE");
         System.out.println("Ingrese una opcion: ");
         op= ing.nextInt();
         switch (op) {

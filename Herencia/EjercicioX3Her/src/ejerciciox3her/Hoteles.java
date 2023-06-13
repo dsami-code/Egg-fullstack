@@ -112,7 +112,7 @@ public class Hoteles extends Alojamientos {
 
         int capHotel = this.numCamas;
         this.precioHabita = 50 + (1 * capHotel);
-        System.out.println("El precio de la habitacion es: " + this.precioHabita);
+        //System.out.println("El precio de la habitacion es: " + this.precioHabita);
 
     }
 

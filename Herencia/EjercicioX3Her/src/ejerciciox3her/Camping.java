@@ -133,6 +133,7 @@ public class Camping extends AlojamientoExtras {
         System.out.println("Ingrese la cantidad de Baños: ");
 
         this.cantBanios = ing.nextInt();
+        this.restaurant = false;
         System.out.println("Indique si tiene restaurant. s(si) o n(no) ");
         char rpta = ing.next().charAt(0);
         if ("s".equalsIgnoreCase(String.valueOf(rpta))) {

@@ -168,8 +168,10 @@ public class Hotel5 extends Hotel4 {
         int valorLimosinas = this.cantLimosinas * 15;
 
         this.precioHabita = super.precioHabita + valorLimosinas;
-        System.out.println(super.toString());
+      
+        //System.out.println(super.toString());
         System.out.println(toString());
+        System.out.println("El precio de la habitacion es: " + this.precioHabita);
         System.out.println("");
 
     }

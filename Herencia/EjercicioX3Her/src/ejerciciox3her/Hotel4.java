@@ -162,9 +162,10 @@ public class Hotel4 extends Hoteles{
         
         }
         this.precioHabita = super.precioHabita + valorRest + valorGym;
-        
-        System.out.println(super.toString());
-        System.out.println(toString());
+        System.out.println("El precio de la habitacion es: " + this.precioHabita);
+        //System.out.println(super.toString());
+       // System.out.println(toString());
+       
         
     }
     
