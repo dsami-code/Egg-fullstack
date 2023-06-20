@@ -33,7 +33,7 @@ public class Ejercicio8Excepcion {
             valor = valor + 1;
             System.out.println("Valor final del try :" + valor);
         } catch (NumberFormatException e) {
-            valor = valor + Integer.parseInt("1");
+            valor = valor + Integer.parseInt("w");
             System.out.println("Valor final del catch  :" + valor);
             //throw e;
         } finally {
