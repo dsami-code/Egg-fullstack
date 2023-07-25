@@ -4,10 +4,29 @@
  */
 package tienda.persistencia;
 
+import tienda.entidades.Producto;
+
 /**
  *
  * @author Usuario
  */
-public class DAOProducto {
+public final class DAOProducto extends DAO{
     
+    public void listarProductos(){
+    
+    }
+    //f) Ingresar un producto a la base de datos.
+    //h) Editar un producto con datos a elección. 
+    public void modificarProducto(Producto producto) throws Exception{
+        
+        try {
+            if (producto == null) {
+             throw new Exception("Debe indicar el producto que desea modificar");
+            }
+            String sql = "UPDATE Producto SET" + "precio = " + producto.getPrecio() + " WHERE nombre = " + producto.getCodigo() + ";";
+            insertModifyDelete(sql);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 }

@@ -39,12 +39,44 @@ public abstract class DAO {
     
     }
     
-    protected void desconectarBase(){
+    protected void desconectarBase() throws Exception{
         try {
-            
+            if (resultado != null) {
+                resultado.close();
+            }
+             if (sentencia != null) {
+                sentencia.close();
+            }
+              if (conexion != null) {
+                conexion.close();
+            }
         } catch (Exception e) {
             throw e;
         }
     
     }
+    
+    protected void insertModifyDelete(String sql) throws Exception{
+        try {
+            conectarBase();
+            sentencia=conexion.createStatement();
+            sentencia.executeUpdate(sql);
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw ex;
+        }finally{
+        desconectarBase();
+        }
+    }
+    
+    protected void consultarBase(String sql) throws Exception{
+        try {
+            conectarBase();
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(sql);
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
+    
+    
 }
