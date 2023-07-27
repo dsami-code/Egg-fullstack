@@ -5,6 +5,7 @@
 package Servicios;
 
 import Entidades.Autor;
+import Entidades.Libro;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,7 @@ public class LibreriaService {
         EditorialService editoS = new EditorialService();
         LibroService libroS = new LibroService();
         Autor autor = new Autor();
+        Libro libro = new Libro();
 
         do {
             System.out.println("-----------MENU----------");
@@ -29,8 +31,8 @@ public class LibreriaService {
             System.out.println("3 - Editar");
             System.out.println("4 - Mostrar");
             System.out.println("5 - Buscar autor por nombre");
-            System.out.println("6 - ");
-            System.out.println("7 - ");
+            System.out.println("6 - Buscar un libro por ISBN");
+            System.out.println("7 -  Buscar un libro por titulo");
             System.out.println("8 - ");
             System.out.println("9 - Salir");
             System.out.print("Ingrese la opcion: ");
@@ -79,7 +81,7 @@ public class LibreriaService {
                                 editoS.eliminarEditorial();
                                 break;
                             case 3:
-                                //LibroService.crearLibro(libro);
+                                libroS.eliminarLibro();
                                 break;
                             case 4:
                                 System.out.println("Retornando...");
@@ -103,7 +105,38 @@ public class LibreriaService {
                                 editoS.editarEditorial();
                                 break;
                             case 3:
-                                //LibroService.crearLibro(libro);
+                                do {
+                System.out.println("Indique que desea editar: \n1:Año\n2:Titulo del Libro\n3:Autor\n4:Editoral\n5:Cantidad Ejemplares\n6:Cantidad Ejemplares Prestados\n7:Retornar Menu Principal");
+                System.out.print("Ingrese la opcion: ");
+                op = leer.nextInt();
+                
+                switch (op) {
+                    case 1:
+                      libroS.editarLibroAnio();
+                        break;
+                    case 2:
+                        libroS.editarTituloLib();
+                        
+                        break;
+                    case 3:
+                       libroS.editarAutorLib();
+                        break;
+                    case 4:
+                       libroS.cantEjemplares();
+                        break;
+                    case 5:
+                        libroS.cantEjemPrestados();
+                        break;
+                    case 6:
+                     
+                        break;
+                    case 7:
+                        System.out.println("Retornando...");
+                        break;
+                    default:
+                        System.out.println("Opcion incorrecta!");
+                }
+            } while (op != 7);
                                 break;
                             case 4:
                                 System.out.println("Retornando...");
@@ -140,6 +173,12 @@ public class LibreriaService {
                     break;
                 case 5:
                     autorS.buscarNombreAutor();
+                    break;
+                case 6:
+                    libroS.buscarLibroID();
+                    break;
+                case 7:
+                    libroS.buscarLibroNombre();
                     break;
                 case 9:
                     System.out.println("Saliendo. . . .");

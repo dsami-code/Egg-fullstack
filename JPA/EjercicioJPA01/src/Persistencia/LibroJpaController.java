@@ -129,6 +129,17 @@ public class LibroJpaController implements Serializable {
         }
     }
 
+        public Libro findNameLibro(String titulo) {
+        EntityManager em = getEntityManager();
+        try {
+            return (Libro)em.createQuery("SELECT a from Libro a where a.titulo = :titulo").setParameter("titulo", titulo).getSingleResult();
+            //return em.find(Autor.class, nombre);
+        } finally {
+            em.close();
+        }
+    }
+
+    
     public int getLibroCount() {
         EntityManager em = getEntityManager();
         try {
